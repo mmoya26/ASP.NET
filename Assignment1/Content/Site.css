@@ -60,8 +60,16 @@ a:hover {
 
 .cards-container {
     display: flex;
+    justify-content: space-between;
+    width: 50%;
 }
 
-.flowers-thumb {
-    align-self: center;
+.card {
+    border: 2px solid red;
+    width: 200px;
+}
+
+.card img {
+    margin: 0 auto;
+    display: block;
 }
