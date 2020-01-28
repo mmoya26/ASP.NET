@@ -53,3 +53,15 @@ nav {
 a:hover {
     text-decoration: none;
 }
+
+.home-third-title {
+    margin-top: 70px;
+}
+
+.cards-container {
+    display: flex;
+}
+
+.flowers-thumb {
+    align-self: center;
+}
