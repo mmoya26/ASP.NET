@@ -4,9 +4,9 @@
 }
 
 /* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+
+p {
+    margin: 0 !important;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -30,11 +30,12 @@ textarea {
 
 .image-container {
     width: 100%;
-    height: 300px;
+    height: 200px;
     background-color: red;
     background-image: url(../images/flowershop_header.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position-x: right;
 }
 
 nav {
@@ -46,12 +47,27 @@ nav {
 .navbar-list {
     display: flex;
     list-style: none;
-    width: 25%;
+    width: 40%;
     justify-content: space-between;
+}
+
+.navbar-list li a {
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+a {
+    color: black;
+    font-weight: 400;
 }
 
 a:hover {
     text-decoration: none;
+}
+
+.home-first-title {
+    margin: 0;
 }
 
 .home-third-title {
@@ -66,20 +82,61 @@ a:hover {
 
 .card {
     border-radius: 5px;
-    background-color: #F8F8FF;
+    background-color: #f7f7f7;
     width: 200px;
     text-align: center;
     padding: 25px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.25), 0 2px 2px rgba(0,0,0,0.20), 0 4px 4px rgba(0,0,0,0.15), 0 8px 8px rgba(0,0,0,0.10), 0 16px 16px rgba(0,0,0,0.05);
 }
 
 .card img {
     margin: 0 auto;
     display: block;
+    border: 2px solid black;
 }
 
 .card ul {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+footer {
+    margin-top: 50px;
+    background-color: #f7f7f7;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+footer span {
+    margin-left: 200px;
+}
+
+.two-column-container {
+    display: flex;
+    justify-content: space-between;
+    
+    padding-top: 30px;
+}
+
+.two-column-container hr {
+    width: 100%;
+    background-color: grey;
+    height: 1px;
+}
+
+.first-column {
+    display: flex;
+    flex-flow: column;
+    flex-grow: 2;
+}
+
+.second-column {
+}
+
+.second-column p {
+    border-top: 4px solid #ff6b6b;
+    background-color: #f7f7f7;
+    padding: 20px;
+    
 }
