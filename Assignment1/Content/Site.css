@@ -93,6 +93,7 @@ a:hover {
     margin: 0 auto;
     display: block;
     border: 2px solid black;
+    cursor: pointer;
 }
 
 .card ul {
