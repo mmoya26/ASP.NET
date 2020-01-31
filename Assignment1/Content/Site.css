@@ -139,7 +139,7 @@ footer span {
     
 }
 
-.image-show {
+#image-show {
     width: 500px;
     height: 500px;
     background-color: black;
@@ -152,18 +152,26 @@ footer span {
     background-size: cover;
 }
 
-.image-show img {
+#image-show img {
     display: block;
     width: 100%;
     height: 100%;
 }
 
-.image-show span {
+#image-show span {
     color: white;
     position: absolute;
     right: 0;
     margin: 10px 20px 0 0;
-    font-size: 18px;
+    font-size: 28px;
     font-weight: bold;
     cursor: pointer;
+    transition: .3s;
+}
+#image-show span:hover {
+    color: #ff6b6b;
+}
+
+.none {
+    display: none;
 }
