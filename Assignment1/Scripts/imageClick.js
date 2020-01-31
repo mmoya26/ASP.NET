@@ -1,4 +1,5 @@
 ﻿var imgElement = document.createElement('img');
+var cover = document.getElementById('cover');
 var imageContainer = document.getElementById('image-show');
 var xIcon = document.getElementById('x');
 var imageOne = document.getElementById('image-one');
@@ -11,6 +12,7 @@ imageOne.addEventListener("click", function () {
     console.log(imgElement);
     imageContainer.appendChild(imgElement);
     imageContainer.classList.remove("none");
+    cover.classList.remove('none');
 });
 
 imageTwo.addEventListener("click", function () {
@@ -19,6 +21,7 @@ imageTwo.addEventListener("click", function () {
     console.log(imgElement);
     imageContainer.appendChild(imgElement);
     imageContainer.classList.remove("none");
+    cover.classList.remove('none');
 });
 
 imageThree.addEventListener("click", function () {
@@ -27,8 +30,15 @@ imageThree.addEventListener("click", function () {
     console.log(imgElement);
     imageContainer.appendChild(imgElement);
     imageContainer.classList.remove("none");
+    cover.classList.remove('none');
 });
 
 xIcon.addEventListener("click", function () {
     imageContainer.classList.add("none");
+    cover.classList.add('none');
+});
+
+cover.addEventListener("click", function () {
+    imageContainer.classList.add("none");
+    cover.classList.add('none');
 });
