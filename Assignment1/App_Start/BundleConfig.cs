@@ -25,6 +25,10 @@ namespace Assignment1
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+
+            // Custom JavaScript - image click thumbnail
+            bundles.Add(new ScriptBundle("~/bundles/imageClick").Include("~/Scripts/imageClick.js"));
         }
     }
 }
