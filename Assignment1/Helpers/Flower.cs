@@ -9,7 +9,7 @@ namespace Assignment1.Helpers
     {
         public string name;
         public string color;
-        public string[] descriptions;
+        public List <String> descriptions;
 
 
         public Flower(string name, string color) {
@@ -17,7 +17,7 @@ namespace Assignment1.Helpers
             this.color = color;
         }
 
-        public Flower(string name, string color, string[] descriptions)
+        public Flower(string name, string color, List<String> descriptions)
         {
             this.name = name;
             this.color = color;
@@ -26,9 +26,8 @@ namespace Assignment1.Helpers
 
         public string converFlowerNameToPath(string flowerName) {
 
-            string newString = flowerName;
-            newString.ToLower();
-            newString.Replace(" ", "_");
+            string newString = flowerName.ToLower();
+            newString = newString.Replace(" ", "_");
 
             return newString;
         }
