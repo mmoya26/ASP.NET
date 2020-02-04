@@ -7,7 +7,7 @@ var imageTwo = document.getElementById('image-two');
 var imageThree = document.getElementById('image-three');
 
 imageOne.addEventListener("click", function () {
-    imgElement.src = "../../images/blue/aster_novae_angliae/images/1.jpg";
+    imgElement.src = "/asp9/ex1/Content/images/blue/aster_novae_angliae/images/1.jpg";
     imgElement.alt = "aster novae angliae flower";
     console.log(imgElement);
     imageContainer.appendChild(imgElement);
@@ -16,7 +16,7 @@ imageOne.addEventListener("click", function () {
 });
 
 imageTwo.addEventListener("click", function () {
-    imgElement.src = "./../images/blue/aster_pantens/images/1.jpg";
+    imgElement.src = "/asp9/ex1/Content/images/blue/aster_pantens/images/1.jpg";
     imgElement.alt = "Aster Pantens Flower";
     console.log(imgElement);
     imageContainer.appendChild(imgElement);
@@ -25,7 +25,7 @@ imageTwo.addEventListener("click", function () {
 });
 
 imageThree.addEventListener("click", function () {
-    imgElement.src = "../../images/blue/centaurea_cyanus_peg/images/1.jpg";
+    imgElement.src = "/asp9/ex1/Content/images/blue/centaurea_cyanus_peg/images/1.jpg";
     imgElement.alt = "Centaurea Cyanus Peg";
     console.log(imgElement);
     imageContainer.appendChild(imgElement);

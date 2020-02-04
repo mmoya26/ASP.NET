@@ -16,8 +16,7 @@ body {
 .image-container {
     width: 100%;
     height: 200px;
-    background-color: red;
-    background-image: url(../Content/images/flowershop_header.png);
+    background-image: url(images/flowershop_header.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: right;
