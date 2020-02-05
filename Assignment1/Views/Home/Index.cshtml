@@ -17,7 +17,7 @@
                 for (int i = 0; i < ViewBag.flowerCount; i++)
                 {
                     <div class="card">
-                        <img src="~/Content/images/blue/@ViewBag.flowerList[i].converFlowerNameToPath(ViewBag.flowerList[i].name)/thumb.jpg" alt="Centaurea Cyanus Peg" id="image-three" />
+                        <img src="~/Content/images/blue/@ViewBag.flowerList[i].converFlowerNameToPath(ViewBag.flowerList[i].name)/thumb.jpg" class="image-thumbnail" alt="@ViewBag.flowerList[i].name" id="image-three" />
                         <h4>@ViewBag.flowerList[i].name</h4>
                         <ul>
 
