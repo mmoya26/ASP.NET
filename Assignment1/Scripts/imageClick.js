@@ -21,7 +21,6 @@ function addEventListener() {
 }
 
 function setUpImagePath(e) {
-    console.log(e);
     var flowerElement = e.target;
     var flowerToPathName = flowerElement.alt;
     flowerToPathName = flowerToPathName.toLowerCase();
