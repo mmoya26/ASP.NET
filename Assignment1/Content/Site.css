@@ -8,6 +8,10 @@ body {
     position: relative;
 }
 
+* {
+    font-family: Open Sans;
+}
+
 #bigWrapper {
     width: 1024px;
     margin: 0 auto;
@@ -44,6 +48,7 @@ nav {
 a {
     color: black;
     font-weight: 400;
+    text-decoration: none;
 }
 
 a:hover {
@@ -71,6 +76,7 @@ a:hover {
     text-align: center;
     padding: 25px;
     border-bottom: 4px solid #3ddc97;
+    margin-right: 10px;
 }
 
 .card img {
@@ -92,6 +98,7 @@ footer {
     padding: 25px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 footer span {
