@@ -35,7 +35,7 @@ nav {
 .navbar-list {
     display: flex;
     list-style: none;
-    width: 40%;
+    width: 45%;
     justify-content: space-between;
 }
 
