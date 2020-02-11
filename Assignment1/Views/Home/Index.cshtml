@@ -6,14 +6,14 @@
     <span id="x" color="red">X</span>
 </div>
 
-<div class="two-column-container">
+
     <div class="first-column">
-        <h2 class="home-first-title">Our Shop</h2>
-        <h3 class="home-third-title">Blue</h3>
+        <h1 class="home-first-title">Our Shop</h1>
+        <h2 class="home-third-title">Blue</h2>
         <hr />
 
         <div class="cards-container">
-            @{   
+            @{
                 for (int i = 0; i < ViewBag.flowerCount; i++)
                 {
                     <div class="card" style="border-bottom: 4px solid @ViewBag.flowerList[i].color">
@@ -21,9 +21,10 @@
                         <h4>@ViewBag.flowerList[i].name</h4>
                         <ul>
 
-                            @{                            
-                                for (int j = 0; j < ViewBag.flowerList[i].descriptions.Count; j++) {
-                                     <li>@ViewBag.flowerList[i].descriptions[j]</li>
+                            @{
+                                for (int j = 0; j < ViewBag.flowerList[i].descriptions.Count; j++)
+                                {
+                                    <li>@ViewBag.flowerList[i].descriptions[j]</li>
                                 }
                             }
                         </ul>
@@ -32,10 +33,5 @@
             }
         </div>
     </div>
-
-    <div class="second-column">
-        <p>Filter and Search functionality unavailable. <br /> Please check back soon.</p>
-    </div>
-</div>
 
 

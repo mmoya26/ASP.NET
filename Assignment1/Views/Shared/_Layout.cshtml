@@ -16,18 +16,24 @@
                 <li>@Html.ActionLink("Home", "Index", "Home")</li>
                 <li>@Html.ActionLink("About Us", "Index", "Home")</li>
                 <li>@Html.ActionLink("Legal", "Index", "Home")</li>
+                <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
                 <li>@Html.ActionLink("Register", "Index", "Home")</li>
             </ul>
         </nav>
         <div class="body-content">
-            @RenderBody()
-        </div>
+            <div class="two-column-container">
+                @RenderBody()
+                <div class="second-column">
+                    <p>Filter and Search functionality unavailable. <br /> Please check back soon.</p>
+                </div>
+            </div>
 
-        <footer>
-           <p>Plant Photos and Information by: MissouriPlants.com Retrevied: Feb 08 </p>
-           <span>@Html.ActionLink("Contact Us", "Index", "Home")</span>
-        </footer>
-    </div>
+            <footer>
+                <p>Plant Photos and Information by: MissouriPlants.com Retrevied: Feb 08 </p>
+                <span>@Html.ActionLink("Contact Us", "Index", "Home")</span>
+            </footer>
+        </div>
+        </div>
 @Scripts.Render("~/bundles/imageClick")
 @RenderSection("scripts", required: false)
 </body>

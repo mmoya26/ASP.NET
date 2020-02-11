@@ -26,7 +26,7 @@ function setUpImagePath(e) {
     flowerToPathName = flowerToPathName.toLowerCase();
     flowerToPathName = flowerToPathName.split(" ").join("_");
 
-    imgElement.src = "/asp9/ex1/Content/images/blue/";
+    imgElement.src = "/asp9/ex3/Content/images/blue/";
     imgElement.src += flowerToPathName;
     imgElement.src += "/images/1.jpg"
 

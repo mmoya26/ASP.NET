@@ -60,7 +60,7 @@ a:hover {
 }
 
 .home-third-title {
-    margin-top: 70px;
+    margin-top: 40px;
 }
 
 .cards-container {
@@ -111,23 +111,23 @@ footer span {
     padding-top: 30px;
 }
 
-.two-column-container hr {
-    width: 100%;
+hr {
+    width: 75%;
     background-color: grey;
     height: 1px;
+    margin: 0;
 }
 
 .first-column {
     display: flex;
     flex-flow: column;
-    flex-grow: 2;
+    width: 75%;
 }
 
 .second-column p {
     border-top: 4px solid #ff6b6b;
     background-color: #f7f7f7;
     padding: 20px;
-    
 }
 
 #image-show {
