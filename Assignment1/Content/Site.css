@@ -67,16 +67,20 @@ a:hover {
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
+    height: 75%;
+    flex-wrap: wrap;
+    overflow-y: scroll;
 }
 
 .card {
     border-radius: 5px;
     background-color: #f7f7f7;
-    width: 200px;
+    width: 180px;
     text-align: center;
     padding: 25px;
     border-bottom: 4px solid #3ddc97;
     margin-right: 10px;
+    margin-bottom: 30px;
 }
 
 .card img {
@@ -121,7 +125,7 @@ hr {
 .first-column {
     display: flex;
     flex-flow: column;
-    width: 75%;
+    width: 90%;
 }
 
 .second-column p {
