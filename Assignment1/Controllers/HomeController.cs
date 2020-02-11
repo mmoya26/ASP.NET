@@ -11,9 +11,9 @@ namespace Assignment1.Controllers
     {
 
         List<Flower> flowerList = new List<Flower>();
-        Flower firstFlower = new Flower("Aster Novae Angliae", "red", new List<String> { "Bright Colors", "Strong Living", "Made for Inside" });
-        Flower secondFlower = new Flower("Aster Pantens", "red", new List<String> { "Bright Colors", "Strong Living", "Made for Inside" });
-        Flower thirdFlower = new Flower("Centaurea Cyanus Peg", "red", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" });
+        Flower firstFlower = new Flower("Aster Novae Angliae", "pink", new List<String> { "Bright Colors", "Strong Living", "Made for Inside" });
+        Flower secondFlower = new Flower("Aster Pantens", "blue", new List<String> { "Bright Colors", "Strong Living", "Made for Inside" });
+        Flower thirdFlower = new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" });
 
         public ActionResult Index()
         {

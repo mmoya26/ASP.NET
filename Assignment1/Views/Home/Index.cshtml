@@ -16,7 +16,7 @@
             @{   
                 for (int i = 0; i < ViewBag.flowerCount; i++)
                 {
-                    <div class="card">
+                    <div class="card" style="border-bottom: 4px solid @ViewBag.flowerList[i].color">
                         <img src="~/Content/images/blue/@ViewBag.flowerList[i].converFlowerNameToPath(ViewBag.flowerList[i].name)/thumb.jpg" class="image-thumbnail" alt="@ViewBag.flowerList[i].name" id="image-three" />
                         <h4>@ViewBag.flowerList[i].name</h4>
                         <ul>
