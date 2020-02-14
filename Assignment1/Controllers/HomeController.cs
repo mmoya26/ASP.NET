@@ -16,6 +16,16 @@ namespace Assignment1.Controllers
             new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
             new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
             new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
+            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
+            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
+            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
+            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
+            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
+            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
+            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
+            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
+            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
+            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
             new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" })
         };
 
