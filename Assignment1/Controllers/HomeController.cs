@@ -13,25 +13,21 @@ namespace Assignment1.Controllers
         List<Flower> flowerList = new List<Flower> {
             new Flower("Aster Novae Angliae", "pink", new List<String> { "Bright Colors", "Strong Living", "Made for Inside" }),
             new Flower("Aster Pantens", "blue", new List<String> { "Bright Colors", "Strong Living", "Made for Inside" }),
-            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
-            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
-            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
-            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
-            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
-            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
-            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
-            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
-            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
-            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
-            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
-            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
-            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" }),
             new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" })
         };
 
 
         public ActionResult Index()
         {
+
+            Random random = new Random();
+            
+
+            for (int i = 0; i < 10; i++) {
+                int randomIndex = random.Next(flowerList.Count);
+                Flower newFlower = new Flower(flowerList[randomIndex].name, flowerList[randomIndex].color, flowerList[randomIndex].descriptions);
+                flowerList.Add(newFlower);
+            }
 
             ViewBag.flowerList = flowerList;
             ViewBag.flowerCount = flowerList.Count();
