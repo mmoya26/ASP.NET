@@ -181,3 +181,11 @@ hr {
     opacity: .6;
     position: absolute;
 }
+
+input[type=submit] {
+    background-color: #DA3E52;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+}
