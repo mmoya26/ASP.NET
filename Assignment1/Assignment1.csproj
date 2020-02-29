@@ -166,22 +166,65 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\blue\aster_novae_angliae\images\1.jpg" />
+    <Content Include="Content\images\blue\aster_novae_angliae\images\2.jpg" />
+    <Content Include="Content\images\blue\aster_novae_angliae\images\3.jpg" />
+    <Content Include="Content\images\blue\aster_novae_angliae\images\4.jpg" />
+    <Content Include="Content\images\blue\aster_novae_angliae\images\5.jpg" />
     <Content Include="Content\images\blue\aster_novae_angliae\thumb.jpg" />
     <Content Include="Content\images\blue\aster_pantens\images\1.jpg" />
+    <Content Include="Content\images\blue\aster_pantens\images\2.jpg" />
+    <Content Include="Content\images\blue\aster_pantens\images\3.jpg" />
+    <Content Include="Content\images\blue\aster_pantens\images\4.jpg" />
+    <Content Include="Content\images\blue\aster_pantens\images\5.jpg" />
     <Content Include="Content\images\blue\aster_pantens\thumb.jpg" />
     <Content Include="Content\images\blue\centaurea_cyanus_peg\images\1.jpg" />
+    <Content Include="Content\images\blue\centaurea_cyanus_peg\images\2.jpg" />
+    <Content Include="Content\images\blue\centaurea_cyanus_peg\images\3.jpg" />
+    <Content Include="Content\images\blue\centaurea_cyanus_peg\images\4.jpg" />
     <Content Include="Content\images\blue\centaurea_cyanus_peg\thumb.jpg" />
+    <Content Include="Content\images\blue\commelina\images\1.jpg" />
+    <Content Include="Content\images\blue\commelina\images\3.jpg" />
+    <Content Include="Content\images\blue\commelina\images\4.jpg" />
+    <Content Include="Content\images\blue\commelina\images\5.jpg" />
+    <Content Include="Content\images\blue\commelina\images\6.jpg" />
+    <Content Include="Content\images\blue\commelina\thumb.jpg" />
+    <Content Include="Content\images\blue\delphinium_carolinianum\images\1.jpg" />
+    <Content Include="Content\images\blue\delphinium_carolinianum\images\2.jpg" />
+    <Content Include="Content\images\blue\delphinium_carolinianum\images\3.jpg" />
+    <Content Include="Content\images\blue\delphinium_carolinianum\images\4.jpg" />
+    <Content Include="Content\images\blue\delphinium_carolinianum\images\5.jpg" />
+    <Content Include="Content\images\blue\delphinium_carolinianum\thumb.jpg" />
+    <Content Include="Content\images\blue\delphinium_tricorne\images\1.jpg" />
+    <Content Include="Content\images\blue\delphinium_tricorne\images\2.jpg" />
+    <Content Include="Content\images\blue\delphinium_tricorne\images\3.jpg" />
+    <Content Include="Content\images\blue\delphinium_tricorne\images\4.jpg" />
+    <Content Include="Content\images\blue\delphinium_tricorne\thumb.jpg" />
+    <Content Include="Content\images\blue\dodecatheon_meadia\images\1.jpg" />
+    <Content Include="Content\images\blue\dodecatheon_meadia\images\2.jpg" />
+    <Content Include="Content\images\blue\dodecatheon_meadia\images\3.jpg" />
+    <Content Include="Content\images\blue\dodecatheon_meadia\thumb.jpg" />
+    <Content Include="Content\images\blue\hyacinthus\images\1.jpg" />
+    <Content Include="Content\images\blue\hyacinthus\images\2.jpg" />
+    <Content Include="Content\images\blue\hyacinthus\images\3.jpg" />
+    <Content Include="Content\images\blue\hyacinthus\thumb.jpg" />
+    <Content Include="Content\images\blue\ipomoea_hederacea\images\1.jpg" />
+    <Content Include="Content\images\blue\ipomoea_hederacea\images\2.jpg" />
+    <Content Include="Content\images\blue\ipomoea_hederacea\images\3.jpg" />
+    <Content Include="Content\images\blue\ipomoea_hederacea\images\4.jpg" />
+    <Content Include="Content\images\blue\ipomoea_hederacea\images\5.jpg" />
+    <Content Include="Content\images\blue\ipomoea_hederacea\thumb.jpg" />
+    <Content Include="Content\images\blue\ipomoea_purpurea\images\1.jpg" />
+    <Content Include="Content\images\blue\ipomoea_purpurea\images\2.jpg" />
+    <Content Include="Content\images\blue\ipomoea_purpurea\images\3.jpg" />
+    <Content Include="Content\images\blue\ipomoea_purpurea\images\4.jpg" />
+    <Content Include="Content\images\blue\ipomoea_purpurea\images\5.jpg" />
+    <Content Include="Content\images\blue\ipomoea_purpurea\images\6.jpg" />
+    <Content Include="Content\images\blue\ipomoea_purpurea\thumb.jpg" />
     <Content Include="Content\images\flowershop_header.png" />
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\images\blue\aster_novae_angliae\images\Thumbs.db" />
-    <Content Include="Content\images\blue\aster_novae_angliae\Thumbs.db" />
-    <Content Include="Content\images\blue\aster_pantens\images\Thumbs.db" />
-    <Content Include="Content\images\blue\aster_pantens\Thumbs.db" />
-    <Content Include="Content\images\blue\centaurea_cyanus_peg\images\Thumbs.db" />
-    <Content Include="Content\images\blue\centaurea_cyanus_peg\Thumbs.db" />
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -189,6 +232,13 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\images\blue\aster_novae_angliae\images\Thumbs.db" />
+    <Content Include="Content\images\blue\aster_novae_angliae\Thumbs.db" />
+    <Content Include="Content\images\blue\aster_pantens\images\Thumbs.db" />
+    <Content Include="Content\images\blue\aster_pantens\Thumbs.db" />
+    <Content Include="Content\images\blue\centaurea_cyanus_peg\images\Thumbs.db" />
+    <Content Include="Content\images\blue\centaurea_cyanus_peg\Thumbs.db" />
+    <Content Include="Content\images\blue\ipomoea_hederacea\images\Thumbs.db" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Models\Model1.Context.tt">
