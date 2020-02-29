@@ -1,38 +1,52 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.EnterpriseServices;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Assignment1.Helpers;
+using Assignment1.Models;
 
 namespace Assignment1.Controllers
 {
     public class HomeController : Controller
     {
-
-        List<Flower> flowerList = new List<Flower> {
-            new Flower("Aster Novae Angliae", "pink", new List<String> { "Bright Colors", "Strong Living", "Made for Inside" }),
-            new Flower("Aster Pantens", "blue", new List<String> { "Bright Colors", "Strong Living", "Made for Inside" }),
-            new Flower("Centaurea Cyanus Peg", "blue", new List <String> { "Bright Colors", "Strong Living", "Made for Inside" })
-        };
-
+        private asp9Entities db = new asp9Entities();
 
         public ActionResult Index()
         {
+            var allFlowers = db.FLOWERs.ToList();
+            var characteristics = db.FLOWERVIEWs.ToList();
+            var allColors = db.COLORs.ToList();
 
-            Random random = new Random();
-            
+            List<FLOWER> myFlowers = new List<FLOWER>();
+            List<FLOWERVIEW> allCharacteristics = new List<FLOWERVIEW>();
+            List<COLOR> allColorsList = new List<COLOR>();
 
-            for (int i = 0; i < 10; i++) {
-                int randomIndex = random.Next(flowerList.Count);
-                Flower newFlower = new Flower(flowerList[randomIndex].name, flowerList[randomIndex].color, flowerList[randomIndex].descriptions);
-                flowerList.Add(newFlower);
+            foreach (var flower in allFlowers)
+            {
+                // If flower color == 1 (Blue)
+                if (flower.COLOR_ID == 1)
+                {
+                    // Add the flower to the list
+                    myFlowers.Add(flower);
+                }      
             }
 
-            ViewBag.flowerList = flowerList;
-            ViewBag.flowerCount = flowerList.Count();
+            foreach (var record in characteristics)
+            {
+                allCharacteristics.Add(record);
+            }
 
-            return View();
+            foreach (var color in allColors)
+            {
+                allColorsList.Add(color);
+            }
+
+            ViewBag.flowerCharacteristics = allCharacteristics;
+            ViewBag.allColors = allColorsList;
+
+            return View(myFlowers);
         }
 
         public ActionResult About()

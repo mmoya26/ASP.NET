@@ -1,4 +1,9 @@
-﻿@{
+﻿@using Assignment1.Models;
+@model IEnumerable<FLOWER>
+@using System.Globalization;
+@using Assignment1.Helpers
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -10,26 +15,37 @@
     <div class="first-column">
         <h1 class="home-first-title">Our Shop</h1>
         <h2 class="home-third-title">Blue</h2>
-        <hr />
+        <hr />   
 
         <div class="cards-container">
-            @{
-                for (int i = 0; i < ViewBag.flowerCount; i++)
-                {
-                    <div class="card" style="border-bottom: 4px solid @ViewBag.flowerList[i].color">
-                        <img src="~/Content/images/blue/@ViewBag.flowerList[i].converFlowerNameToPath(ViewBag.flowerList[i].name)/thumb.jpg" class="image-thumbnail" alt="@ViewBag.flowerList[i].name" id="image-three" />
-                        <h4>@ViewBag.flowerList[i].name</h4>
-                        <ul>
+            
+            @foreach (var flower in Model)
+            {
+                var flowerColor = "";
 
-                            @{
-                                for (int j = 0; j < ViewBag.flowerList[i].descriptions.Count; j++)
+                foreach (var color in ViewBag.allColors)
+                {
+                    if (color.COLOR_ID == flower.COLOR_ID)
+                    {
+                        flowerColor = color.COLOR_NAME;
+                    }
+                }
+
+                <div class="card" style="border-bottom: 4px solid @flowerColor">
+                    <img src="~/Content/images/blue/@flower.FLOWER_NAME/thumb.jpg" class="image-thumbnail" alt="@flower.convertToNormalName(flower.FLOWER_NAME).ToTitleCase()"/>
+                    <h4>@flower.convertToNormalName(flower.FLOWER_NAME).ToTitleCase()</h4>
+                    <ul>
+                        @{
+                            foreach (var record in ViewBag.flowerCharacteristics)
+                            {
+                                if (record.FLOWER_ID == flower.FLOWER_ID)
                                 {
-                                    <li>@ViewBag.flowerList[i].descriptions[j]</li>
+                                    <li>@record.CHAR_DESC</li>
                                 }
                             }
-                        </ul>
-                    </div>
-                }
+                        }
+                    </ul>
+                </div>
             }
         </div>
     </div>
