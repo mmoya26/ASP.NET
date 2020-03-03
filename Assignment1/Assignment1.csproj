@@ -276,7 +276,8 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\imageClick.js" />
-    <Content Include="Views\Shared\_SearchForm.cshtml" />
+    <Content Include="Views\Shared\_SearchFormIndex.cshtml" />
+    <Content Include="Views\Shared\_SearchFormContact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
