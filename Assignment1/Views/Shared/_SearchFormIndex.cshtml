@@ -1,72 +1,55 @@
-﻿@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+﻿@using Assignment1.Models
+@model SearchFlower
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
 {
-
     <h4>Search Flower Names Products</h4>
-    <p>Search: @Html.TextBox("query")</p>
 
-
+    <p>Search: @Html.TextBoxFor(s => s.FlowerNameSearched)</p>
     <input type="submit" value="Search"/>
-
-    var colors = new List<SelectListItem> {
-
-    new SelectListItem { Text="Please Select a Color", Value="" },
-    new SelectListItem { Text="Blue", Value="blue" },
-    new SelectListItem { Text="Red", Value="red"},
-    new SelectListItem { Text="Yellow", Value="yellow"}
-    };
+    <br/>
+    <br />
 
     <h4>Filter Products</h4>
 
     <p>Color:</p>
-    @Html.DropDownList("color", new SelectList(colors, "Value", "Text"))
+    @Html.DropDownListFor(s => s.FlowerColorSelected, Model.AllFlowerColors, "Please Select a Color")
 
-
-    var size = new List<SelectListItem> {
-
-        new SelectListItem { Text="Please Select a Size", Value="" },
+    <p>Size:</p>
+    @Html.DropDownListFor(s => s.FlowerSizeSelected, new List<SelectListItem>
+    {   
         new SelectListItem { Text="Small", Value="small" },
         new SelectListItem { Text="Medium", Value="medium"},
         new SelectListItem { Text="Large", Value="large"}
-    };
-
-
-    <p>Size:</p>
-    @Html.DropDownList("size", new SelectList(size, "Value", "Text"))
-
-
-    var from = new List<SelectListItem> {
-
-        new SelectListItem { Text="From", Value="" },
-        new SelectListItem { Text="0", Value="0" },
-        new SelectListItem { Text="25", Value="25"},
-        new SelectListItem { Text="50", Value="50"},
-        new SelectListItem { Text="75", Value="75" },
-        new SelectListItem { Text="100", Value="100"},
-        new SelectListItem { Text="125", Value="125" },
-        new SelectListItem { Text="150", Value="150"},
-        new SelectListItem { Text="175", Value="175" },
-        new SelectListItem { Text="200", Value="200"}
-    };
-
-    var to = new List<SelectListItem> {
-
-        new SelectListItem { Text="To", Value="" },
-        new SelectListItem { Text="0", Value="0" },
-        new SelectListItem { Text="25", Value="25"},
-        new SelectListItem { Text="50", Value="50"},
-        new SelectListItem { Text="75", Value="75" },
-        new SelectListItem { Text="100", Value="100"},
-        new SelectListItem { Text="125", Value="125" },
-        new SelectListItem { Text="150", Value="150"},
-        new SelectListItem { Text="175", Value="175" },
-        new SelectListItem { Text="200", Value="200"}
-    };
-
+    }, "Please Select a Size");
 
     <p>
-        Price: <br /> @Html.DropDownList("from", new SelectList(from, "Value", "Text"))
-        @Html.DropDownList("to", new SelectList(to, "Value", "Text"))
+        Price: <br /> 
+        @Html.DropDownListFor(s => s.FlowerStartPriceSelected, new List<SelectListItem>
+        {
+            new SelectListItem { Text="0", Value="0" },
+            new SelectListItem { Text="25", Value="25"},
+            new SelectListItem { Text="50", Value="50"},
+            new SelectListItem { Text="75", Value="75" },
+            new SelectListItem { Text="100", Value="100"},
+            new SelectListItem { Text="125", Value="125" },
+            new SelectListItem { Text="150", Value="150"},
+            new SelectListItem { Text="175", Value="175" },
+            new SelectListItem { Text="200", Value="200"}
+        }, "From")
+
+        @Html.DropDownListFor(s => s.FlowerEndPriceSelected, new List<SelectListItem>
+        {
+            new SelectListItem { Text="0", Value="0" },
+            new SelectListItem { Text="25", Value="25"},
+            new SelectListItem { Text="50", Value="50"},
+            new SelectListItem { Text="75", Value="75" },
+            new SelectListItem { Text="100", Value="100"},
+            new SelectListItem { Text="125", Value="125" },
+            new SelectListItem { Text="150", Value="150"},
+            new SelectListItem { Text="175", Value="175" },
+            new SelectListItem { Text="200", Value="200"}
+        }, "To")
     </p>
-    <input type="submit" value="Filter" />
+    <input type="submit" value="Apply Filters" />
 
 }

@@ -5,6 +5,18 @@
 
 @{
     ViewBag.Title = "Home Page";
+    var flowerHeaderColor = "Red";
+
+    foreach (var flower in Model)
+    {
+        foreach (var color in ViewBag.allColors)
+        {
+            if (color.COLOR_ID == flower.COLOR_ID)
+            {
+                flowerHeaderColor = color.COLOR_NAME;
+            }
+        }
+    }
 }
 
 <div id="image-show" class="none">
@@ -12,9 +24,10 @@
 </div>
 
 
-    <div class="first-column">
+
+<div class="first-column">
         <h1 class="home-first-title">Our Shop</h1>
-        <h2 class="home-third-title">Blue</h2>
+        <h2 class="home-third-title">@flowerHeaderColor</h2>
         <hr />   
 
         <div class="cards-container">
@@ -28,11 +41,12 @@
                     if (color.COLOR_ID == flower.COLOR_ID)
                     {
                         flowerColor = color.COLOR_NAME;
+                        flowerHeaderColor = flowerColor;
                     }
                 }
 
                 <div class="card" style="border-bottom: 4px solid @flowerColor">
-                    <img src="~/Content/images/blue/@flower.FLOWER_NAME/thumb.jpg" class="image-thumbnail" alt="@flower.convertToNormalName(flower.FLOWER_NAME).ToTitleCase()"/>
+                    <img src="~/Content/images/@flowerColor.ToLower()/@flower.FLOWER_NAME/thumb.jpg" class="image-thumbnail" alt="@flower.convertToNormalName(flower.FLOWER_NAME).ToTitleCase()"/>
                     <h4>@flower.convertToNormalName(flower.FLOWER_NAME).ToTitleCase()</h4>
                     <ul>
                         @{
@@ -50,6 +64,9 @@
         </div>
     </div>
 
-    <div class="second-column">
-        @Html.Partial("_SearchFormIndex")
-    </div>
+<div class="second-column">
+
+    @Html.Action("Index", "SearchFlower")
+
+</div>
+

@@ -130,6 +130,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SearchFlowerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -138,6 +139,7 @@
     <Compile Include="Models\CHARACTERISTIC.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SearchFlower.cs" />
     <Compile Include="Models\COLOR.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -221,6 +223,103 @@
     <Content Include="Content\images\blue\ipomoea_purpurea\images\6.jpg" />
     <Content Include="Content\images\blue\ipomoea_purpurea\thumb.jpg" />
     <Content Include="Content\images\flowershop_header.png" />
+    <Content Include="Content\images\red\gaillardia_pulchella\images\1.jpg" />
+    <Content Include="Content\images\red\gaillardia_pulchella\images\2.jpg" />
+    <Content Include="Content\images\red\gaillardia_pulchella\images\3.jpg" />
+    <Content Include="Content\images\red\gaillardia_pulchella\thumb.jpg" />
+    <Content Include="Content\images\red\ipomoea_quamoclit\images\1.jpg" />
+    <Content Include="Content\images\red\ipomoea_quamoclit\images\2.jpg" />
+    <Content Include="Content\images\red\ipomoea_quamoclit\images\3.jpg" />
+    <Content Include="Content\images\red\ipomoea_quamoclit\images\4.jpg" />
+    <Content Include="Content\images\red\ipomoea_quamoclit\thumb.jpg" />
+    <Content Include="Content\images\red\iris_fulva\images\1.jpg" />
+    <Content Include="Content\images\red\iris_fulva\images\2.jpg" />
+    <Content Include="Content\images\red\iris_fulva\images\3.jpg" />
+    <Content Include="Content\images\red\iris_fulva\images\4.jpg" />
+    <Content Include="Content\images\red\iris_fulva\thumb.jpg" />
+    <Content Include="Content\images\red\lobelia_cardinalis\images\1.jpg" />
+    <Content Include="Content\images\red\lobelia_cardinalis\images\2.jpg" />
+    <Content Include="Content\images\red\lobelia_cardinalis\images\3.jpg" />
+    <Content Include="Content\images\red\lobelia_cardinalis\images\4.jpg" />
+    <Content Include="Content\images\red\lobelia_cardinalis\images\5.jpg" />
+    <Content Include="Content\images\red\lobelia_cardinalis\thumb.jpg" />
+    <Content Include="Content\images\red\papaver_rhoeas\images\1.jpg" />
+    <Content Include="Content\images\red\papaver_rhoeas\images\2.jpg" />
+    <Content Include="Content\images\red\papaver_rhoeas\images\3.jpg" />
+    <Content Include="Content\images\red\papaver_rhoeas\images\4.jpg" />
+    <Content Include="Content\images\red\papaver_rhoeas\images\5.jpg" />
+    <Content Include="Content\images\red\papaver_rhoeas\images\6.jpg" />
+    <Content Include="Content\images\red\papaver_rhoeas\images\7.jpg" />
+    <Content Include="Content\images\red\papaver_rhoeas\thumb.jpg" />
+    <Content Include="Content\images\red\trifolium_incarnatum\images\1.jpg" />
+    <Content Include="Content\images\red\trifolium_incarnatum\images\2.jpg" />
+    <Content Include="Content\images\red\trifolium_incarnatum\images\3.jpg" />
+    <Content Include="Content\images\red\trifolium_incarnatum\images\4.jpg" />
+    <Content Include="Content\images\red\trifolium_incarnatum\images\5.jpg" />
+    <Content Include="Content\images\red\trifolium_incarnatum\images\6.jpg" />
+    <Content Include="Content\images\red\trifolium_incarnatum\thumb.jpg" />
+    <Content Include="Content\images\yellow\bidens_polylepis\images\1.jpg" />
+    <Content Include="Content\images\yellow\bidens_polylepis\images\2.jpg" />
+    <Content Include="Content\images\yellow\bidens_polylepis\images\3.jpg" />
+    <Content Include="Content\images\yellow\bidens_polylepis\images\4.jpg" />
+    <Content Include="Content\images\yellow\bidens_polylepis\images\5.jpg" />
+    <Content Include="Content\images\yellow\bidens_polylepis\thumb.jpg" />
+    <Content Include="Content\images\yellow\coreopsis_pubescens\images\1.jpg" />
+    <Content Include="Content\images\yellow\coreopsis_pubescens\images\2.jpg" />
+    <Content Include="Content\images\yellow\coreopsis_pubescens\images\3.jpg" />
+    <Content Include="Content\images\yellow\coreopsis_pubescens\images\4.jpg" />
+    <Content Include="Content\images\yellow\coreopsis_pubescens\images\5.jpg" />
+    <Content Include="Content\images\yellow\coreopsis_pubescens\thumb.jpg" />
+    <Content Include="Content\images\yellow\galium_pedemontanum\images\1.jpg" />
+    <Content Include="Content\images\yellow\galium_pedemontanum\images\2.jpg" />
+    <Content Include="Content\images\yellow\galium_pedemontanum\images\3.jpg" />
+    <Content Include="Content\images\yellow\galium_pedemontanum\images\4.jpg" />
+    <Content Include="Content\images\yellow\galium_pedemontanum\thumb.jpg" />
+    <Content Include="Content\images\yellow\gerardia_flava\images\1.jpg" />
+    <Content Include="Content\images\yellow\gerardia_flava\images\2.jpg" />
+    <Content Include="Content\images\yellow\gerardia_flava\images\3.jpg" />
+    <Content Include="Content\images\yellow\gerardia_flava\images\4.jpg" />
+    <Content Include="Content\images\yellow\gerardia_flava\images\5.jpg" />
+    <Content Include="Content\images\yellow\gerardia_flava\thumb.jpg" />
+    <Content Include="Content\images\yellow\helianthus_microcephalus\images\1.jpg" />
+    <Content Include="Content\images\yellow\helianthus_microcephalus\images\2.jpg" />
+    <Content Include="Content\images\yellow\helianthus_microcephalus\images\3.jpg" />
+    <Content Include="Content\images\yellow\helianthus_microcephalus\images\4.jpg" />
+    <Content Include="Content\images\yellow\helianthus_microcephalus\images\5.jpg" />
+    <Content Include="Content\images\yellow\helianthus_microcephalus\thumb.jpg" />
+    <Content Include="Content\images\yellow\helianthu_mollis\images\1.jpg" />
+    <Content Include="Content\images\yellow\helianthu_mollis\images\2.jpg" />
+    <Content Include="Content\images\yellow\helianthu_mollis\images\3.jpg" />
+    <Content Include="Content\images\yellow\helianthu_mollis\images\4.jpg" />
+    <Content Include="Content\images\yellow\helianthu_mollis\thumb.jpg" />
+    <Content Include="Content\images\yellow\lantana\images\1.jpg" />
+    <Content Include="Content\images\yellow\lantana\images\2.jpg" />
+    <Content Include="Content\images\yellow\lantana\images\3.jpg" />
+    <Content Include="Content\images\yellow\lantana\thumb.jpg" />
+    <Content Include="Content\images\yellow\lysimachia_nummularia\images\1.jpg" />
+    <Content Include="Content\images\yellow\lysimachia_nummularia\images\2.jpg" />
+    <Content Include="Content\images\yellow\lysimachia_nummularia\images\3.jpg" />
+    <Content Include="Content\images\yellow\lysimachia_nummularia\thumb.jpg" />
+    <Content Include="Content\images\yellow\monarda_punctata\images\1.jpg" />
+    <Content Include="Content\images\yellow\monarda_punctata\images\2.jpg" />
+    <Content Include="Content\images\yellow\monarda_punctata\images\3.jpg" />
+    <Content Include="Content\images\yellow\monarda_punctata\images\4.jpg" />
+    <Content Include="Content\images\yellow\monarda_punctata\thumb.jpg" />
+    <Content Include="Content\images\yellow\silphium_perfoliatum\images\1.jpg" />
+    <Content Include="Content\images\yellow\silphium_perfoliatum\images\2.jpg" />
+    <Content Include="Content\images\yellow\silphium_perfoliatum\images\3.jpg" />
+    <Content Include="Content\images\yellow\silphium_perfoliatum\images\4.jpg" />
+    <Content Include="Content\images\yellow\silphium_perfoliatum\images\5.jpg" />
+    <Content Include="Content\images\yellow\silphium_perfoliatum\images\6.jpg" />
+    <Content Include="Content\images\yellow\silphium_perfoliatum\thumb.jpg" />
+    <Content Include="Content\images\yellow\stylophorum\images\1.jpg" />
+    <Content Include="Content\images\yellow\stylophorum\images\2.jpg" />
+    <Content Include="Content\images\yellow\stylophorum\images\3.jpg" />
+    <Content Include="Content\images\yellow\stylophorum\images\4.jpg" />
+    <Content Include="Content\images\yellow\stylophorum\images\5.jpg" />
+    <Content Include="Content\images\yellow\stylophorum\images\6.jpg" />
+    <Content Include="Content\images\yellow\stylophorum\images\7.jpg" />
+    <Content Include="Content\images\yellow\stylophorum\thumb.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -239,6 +338,19 @@
     <Content Include="Content\images\blue\centaurea_cyanus_peg\images\Thumbs.db" />
     <Content Include="Content\images\blue\centaurea_cyanus_peg\Thumbs.db" />
     <Content Include="Content\images\blue\ipomoea_hederacea\images\Thumbs.db" />
+    <Content Include="Content\images\red\ipomoea_quamoclit\images\Thumbs.db" />
+    <Content Include="Content\images\red\iris_fulva\images\Thumbs.db" />
+    <Content Include="Content\images\red\lobelia_cardinalis\images\Thumbs.db" />
+    <Content Include="Content\images\red\trifolium_incarnatum\images\Thumbs.db" />
+    <Content Include="Content\images\yellow\coreopsis_pubescens\images\Thumbs.db" />
+    <Content Include="Content\images\yellow\galium_pedemontanum\images\Thumbs.db" />
+    <Content Include="Content\images\yellow\gerardia_flava\images\Thumbs.db" />
+    <Content Include="Content\images\yellow\helianthus_microcephalus\images\Thumbs.db" />
+    <Content Include="Content\images\yellow\lantana\images\Thumbs.db" />
+    <Content Include="Content\images\yellow\lysimachia_nummularia\images\Thumbs.db" />
+    <Content Include="Content\images\yellow\monarda_punctata\images\Thumbs.db" />
+    <Content Include="Content\images\yellow\silphium_perfoliatum\images\Thumbs.db" />
+    <Content Include="Content\images\yellow\stylophorum\images\Thumbs.db" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Models\Model1.Context.tt">
@@ -278,9 +390,11 @@
     <Content Include="Scripts\imageClick.js" />
     <Content Include="Views\Shared\_SearchFormIndex.cshtml" />
     <Content Include="Views\Shared\_SearchFormContact.cshtml" />
+    <Content Include="Views\Home\Legal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\SearchFlower\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
