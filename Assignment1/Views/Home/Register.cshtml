@@ -1,0 +1,96 @@
+﻿@model Assignment1.Models.Register
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        function DisplayMessage(userData) {
+            var target = $("#userRegister")
+            target.empty();
+
+            if (userData) {
+                setTimeout(function()
+                {
+                    target.append("<p id=loading>Thank you for waiting, your request has been processed!</p>")
+            }, 7000)
+                
+            }
+            else {
+                target.append("Please check your entry. No data received.")
+            }
+        }
+    </script>
+}
+
+
+@{
+    ViewBag.Title = "New User Registration";
+}
+<h2>@ViewBag.Title.</h2>
+
+<div class="first-column">
+<div id="loading" style="display:none;">
+    <img src="~/Content/images/pleasewait.gif"/>
+    <p>Loading, please wait...</p>
+</div>
+
+    <div id="userRegister">
+        @using (Ajax.BeginForm("Register",
+            "Home",
+            new AjaxOptions
+            {
+                HttpMethod = "Post",
+                InsertionMode = InsertionMode.Replace,
+                LoadingElementId = "loading",
+                LoadingElementDuration = 4000,
+                OnSuccess = "DisplayMessage"
+            }))
+        {
+            <table>
+                <tr>
+                    <td>First Name:</td>
+                    <td>@Html.TextBoxFor(s => s.uFirstName)</td>
+                </tr>
+                <tr>
+                    <td>Middle Name:</td>
+                    <td>@Html.TextBoxFor(s => s.uMiddleName)</td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td>@Html.TextBoxFor(s => s.uLastName)</td>
+                </tr>
+                <tr>
+                    <td>Email Address:</td>
+                    <td>@Html.TextBoxFor(s => s.uEmail)</td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td>@Html.TextBoxFor(s => s.uPassword)</td>
+                </tr>
+                <tr>
+                    <td>Street Address:</td>
+                    <td>@Html.TextBoxFor(s => s.uStreetAdd)</td>
+                </tr>
+                <tr>
+                    <td>City:</td>
+                    <td>@Html.TextBoxFor(s => s.uCity)</td>
+                </tr>
+                <tr>
+                    <td>Zip:</td>
+                    <td>@Html.TextBoxFor(s => s.uZip)</td>
+                </tr>
+                <tr>
+                    <td>Secret Question:</td>
+                    <td>@Html.TextBoxFor(s => s.uQuestion)</td>
+                </tr>
+                <tr>
+                    <td>Secret Answer:</td>
+                    <td>@Html.TextBoxFor(s => s.uQuestionAnswer)</td>
+                </tr>
+                <tr>
+                    <td><input type="reset" value="Clear Form" /></td>
+                    <td><input type="submit" value="Save Course Data" /></td>
+                </tr>
+            </table>
+        }
+    </div>
+</div>

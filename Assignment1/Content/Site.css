@@ -206,3 +206,11 @@ input[type=submit] {
     border: none;
     border-radius: 5px;
 }
+
+#loading {
+    background-color: paleyellow;
+    border-radius: 10px;
+    border: 1px;
+    font-size: 3em;
+    padding: 30px;
+}

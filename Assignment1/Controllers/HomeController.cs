@@ -339,5 +339,15 @@ namespace Assignment1.Controllers
         {
             return View();
         }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        public JsonResult Register(Register model)
+        {
+            return Json(model);
+        }
     }
 }

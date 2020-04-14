@@ -9,30 +9,32 @@
 </head>
 <body>
     <div id="cover" class="none"></div>
-    <div id="bigWrapper">
-        <div class="image-container"></div>
-        <nav>
-            <ul class="navbar-list">
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("About Us", "About", "Home")</li>
-                <li>@Html.ActionLink("Legal", "Legal", "Home")</li>
-                <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
-                <li>@Html.ActionLink("Register", "Index", "Home")</li>
-            </ul>
-        </nav>
-        <div class="body-content">
-            <div class="two-column-container">
-                @RenderBody()
+<div id="bigWrapper">
+    <div class="image-container"></div>
+    <nav>
+        <ul class="navbar-list">
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("About Us", "About", "Home")</li>
+            <li>@Html.ActionLink("Legal", "Legal", "Home")</li>
+            <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+            <li>@Html.ActionLink("Register", "Register", "Home")</li>
+        </ul>
+    </nav>
+    <div class="body-content">
+        <div class="two-column-container">
+            @RenderBody()
                 
-            </div>
+        </div>
 
-            <footer>
-                <p>Plant Photos and Information by: MissouriPlants.com Retrevied: Feb 08 </p>
-                <span>@Html.ActionLink("Contact Us", "Index", "Home")</span>
-            </footer>
-        </div>
-        </div>
+        <footer>
+            <p>Plant Photos and Information by: MissouriPlants.com Retrevied: Feb 08 </p>
+            <span>@Html.ActionLink("Contact Us", "Index", "Home")</span>
+        </footer>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/imageClick")
+
 @RenderSection("scripts", required: false)
 </body>
 </html>
