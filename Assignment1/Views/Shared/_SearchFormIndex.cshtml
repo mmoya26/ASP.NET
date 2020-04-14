@@ -2,6 +2,7 @@
 @model SearchFlower
 @using (Html.BeginForm("Index", "Home", FormMethod.Post))
 {
+    @Html.ValidationSummary(true)
     <h4>Search Flower Names Products</h4>
 
     <p>Search: @Html.TextBoxFor(s => s.FlowerNameSearched)</p>
@@ -52,4 +53,5 @@
     </p>
     <input type="submit" value="Apply Filters" />
 
+    
 }

@@ -51,6 +51,11 @@ nav {
     transition: 0.2s;
 }
 
+.validation-summary-errors {
+    font-size: 14px;
+    color: red;
+}
+
 a {
     color: black;
     font-weight: 400;

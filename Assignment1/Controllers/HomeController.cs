@@ -58,6 +58,7 @@ namespace Assignment1.Controllers
             string uStartingPrice = flowerResultsSearch.FlowerStartPriceSelected;
             string uEndingPrice = flowerResultsSearch.FlowerEndPriceSelected;
             string uFlowerSearchName = flowerResultsSearch.FlowerNameSearched;
+            bool valid = false;
 
             // Database info
             var allFlowers = db.FLOWERs.ToList();
@@ -70,53 +71,45 @@ namespace Assignment1.Controllers
             List<COLOR> allColorsList = new List<COLOR>();
 
 
-            // Only name
-            if (uFlowerSize == null && uFlowerColorID == null && uEndingPrice == null && uStartingPrice == null &&
-                uFlowerSearchName != null)
+            if (uFlowerColorID != null || uFlowerSize != null || uEndingPrice != null || uStartingPrice != null)
             {
-                resultsFlowers.Clear();
-                foreach (var flower in allFlowers)
+                // If ending price is lower than starting price then invalid
+                if (uStartingPrice != null &&  uEndingPrice != null && Int32.Parse(uEndingPrice) < Int32.Parse(uStartingPrice))
                 {
-                    if (flower.FLOWER_NAME.StartsWith(uFlowerSearchName.ToLower()))
-                    {
-                        resultsFlowers.Add(flower);
-                    }
+                    // Don't do anything for now
+                }
+                else
+                {
+                    valid = true;
                 }
             }
-
-            // Only color
-            if (uFlowerSize == null && uFlowerColorID != null)
+            else if (uFlowerColorID == null && uFlowerSize == null && uEndingPrice == null && uStartingPrice == null && uFlowerSearchName != null)
             {
-                resultsFlowers.Clear();
-                foreach (var flower in allFlowers)
-                {
-                    if (flower.COLOR_ID.ToString() == uFlowerColorID)
-                    {
-                        resultsFlowers.Add(flower);
-                    }
-                }
+                valid = true;
             }
 
-            // Only size picked
-            if (uFlowerColorID == null && uFlowerSize != null)
+
+            if (valid)
             {
-                resultsFlowers.Clear();
-                foreach (var flower in allFlowers)
+                // Only name
+                if (uFlowerSize == null && uFlowerColorID == null && uEndingPrice == null && uStartingPrice == null &&
+                    uFlowerSearchName != null)
                 {
-                    if (flower.FLOWER_SIZE.ToLower() == uFlowerSize)
+                    resultsFlowers.Clear();
+                    foreach (var flower in allFlowers)
                     {
-                        resultsFlowers.Add(flower);
+                        if (flower.FLOWER_NAME.StartsWith(uFlowerSearchName.ToLower()))
+                        {
+                            resultsFlowers.Add(flower);
+                        }
                     }
                 }
-            }
 
-            // Size and color were only picked
-            if (uFlowerColorID != null && uFlowerSize != null)
-            {
-                resultsFlowers.Clear();
-                foreach (var flower in allFlowers)
+                // Only color
+                if (uEndingPrice == null & uStartingPrice == null && uFlowerSize == null && uFlowerColorID != null)
                 {
-                    if (flower.FLOWER_SIZE.ToLower() == uFlowerSize)
+                    resultsFlowers.Clear();
+                    foreach (var flower in allFlowers)
                     {
                         if (flower.COLOR_ID.ToString() == uFlowerColorID)
                         {
@@ -124,59 +117,153 @@ namespace Assignment1.Controllers
                         }
                     }
                 }
-            }
 
-            // Starting or Ending price were only picked or both of them were picked
-            if (uFlowerColorID == null && uFlowerSize == null && uEndingPrice != null  || uFlowerColorID == null && uFlowerSize == null && uStartingPrice != null)
-            {
-                resultsFlowers.Clear();
-
-                // Only ending
-                if (uEndingPrice != null && uStartingPrice == null)
+                // Only size picked
+                if (uFlowerColorID == null && uEndingPrice == null & uStartingPrice == null && uFlowerSize != null)
                 {
+                    resultsFlowers.Clear();
                     foreach (var flower in allFlowers)
                     {
-                        if (flower.FLOWER_PRICE <= Int32.Parse(uEndingPrice))
-                        {
-                            resultsFlowers.Add(flower);
-                        }
-                    }
-                   
-                } else if (uEndingPrice == null && uStartingPrice != null) // only starting
-                {
-                    foreach (var flower in allFlowers)
-                    {
-                        if (flower.FLOWER_PRICE >= Int32.Parse(uStartingPrice))
-                        {
-                            resultsFlowers.Add(flower);
-                        }
-                    }
-                }
-                else
-                {
-                    foreach (var flower in allFlowers)
-                    {
-                        if (flower.FLOWER_PRICE >= Int32.Parse(uStartingPrice) && flower.FLOWER_PRICE <= Int32.Parse(uEndingPrice))
-                        {
-                            resultsFlowers.Add(flower);
-                        }
-                    }
-                }
-            
-            }
-
-            // All filled
-            if (uStartingPrice != null && uEndingPrice != null && uFlowerColorID != null && uFlowerSize != null)
-            {
-                resultsFlowers.Clear();
-
-                foreach (var flower in allFlowers)
-                {
-                    // Color check
-                    if (flower.COLOR_ID.ToString() == uFlowerColorID)
-                    {
-                        // Size check
                         if (flower.FLOWER_SIZE.ToLower() == uFlowerSize)
+                        {
+                            resultsFlowers.Add(flower);
+                        }
+                    }
+                }
+
+                // Size and color were only picked
+                if (uFlowerColorID != null && uFlowerSize != null && uEndingPrice == null && uStartingPrice == null && uFlowerSearchName == null)
+                {
+                    resultsFlowers.Clear();
+                    foreach (var flower in allFlowers)
+                    {
+                        if (flower.FLOWER_SIZE.ToLower() == uFlowerSize)
+                        {
+                            if (flower.COLOR_ID.ToString() == uFlowerColorID)
+                            {
+                                resultsFlowers.Add(flower);
+                            }
+                        }
+                    }
+                }
+
+                // Starting or Ending price were only picked or both of them were picked
+                if (uEndingPrice != null || uStartingPrice != null)
+                {
+                    resultsFlowers.Clear();
+
+                    // Only ending
+                    if (uEndingPrice != null && uStartingPrice == null)
+                    {
+                        foreach (var flower in allFlowers)
+                        {
+                            if (flower.FLOWER_PRICE <= Int32.Parse(uEndingPrice))
+                            {
+                                resultsFlowers.Add(flower);
+                            }
+                        }
+
+                    }
+                    else if (uEndingPrice == null && uStartingPrice != null) // only starting
+                    {
+                        foreach (var flower in allFlowers)
+                        {
+                            if (flower.FLOWER_PRICE >= Int32.Parse(uStartingPrice))
+                            {
+                                resultsFlowers.Add(flower);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        foreach (var flower in allFlowers)
+                        {
+                            if (flower.FLOWER_PRICE >= Int32.Parse(uStartingPrice) && flower.FLOWER_PRICE <= Int32.Parse(uEndingPrice))
+                            {
+                                resultsFlowers.Add(flower);
+                            }
+                        }
+                    }
+
+                }
+
+                // All filled (no name)
+                if (uStartingPrice != null && uEndingPrice != null && uFlowerColorID != null && uFlowerSize != null && uFlowerSearchName == null)
+                {
+                    resultsFlowers.Clear();
+
+                    foreach (var flower in allFlowers)
+                    {
+                        // Color check
+                        if (flower.COLOR_ID.ToString() == uFlowerColorID)
+                        {
+                            // Size check
+                            if (flower.FLOWER_SIZE.ToLower() == uFlowerSize)
+                            {
+                                // Price range check
+                                if (flower.FLOWER_PRICE >= Int32.Parse(uStartingPrice) && flower.FLOWER_PRICE <= Int32.Parse(uEndingPrice))
+                                {
+                                    resultsFlowers.Add(flower);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // All filled except Size (with name)
+                if (uStartingPrice != null && uEndingPrice != null && uFlowerColorID != null && uFlowerSize != null && uFlowerSearchName != null)
+                {
+                    resultsFlowers.Clear();
+                    foreach (var flower in allFlowers)
+                    {
+                        if (flower.FLOWER_NAME.StartsWith(uFlowerSearchName.ToLower()))
+                        {
+                            // Size check
+                            if (flower.FLOWER_SIZE.ToLower() == uFlowerSize)
+                            {
+                                if (flower.COLOR_ID.ToString() == uFlowerColorID)
+                                {
+                                    // Price range check
+                                    if (flower.FLOWER_PRICE >= Int32.Parse(uStartingPrice) && flower.FLOWER_PRICE <= Int32.Parse(uEndingPrice))
+                                    {
+                                        resultsFlowers.Add(flower);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // All filled except for ending price
+                if (uStartingPrice != null && uEndingPrice == null && uFlowerColorID != null && uFlowerSize != null)
+                {
+                    resultsFlowers.Clear();
+                    foreach (var flower in allFlowers)
+                    {
+                        // Color check
+                        if (flower.COLOR_ID.ToString() == uFlowerColorID)
+                        {
+                            // Size check
+                            if (flower.FLOWER_SIZE.ToLower() == uFlowerSize)
+                            {
+                                // Price range check
+                                if (flower.FLOWER_PRICE >= Int32.Parse(uStartingPrice))
+                                {
+                                    resultsFlowers.Add(flower);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // All filled except Size (no name)
+                if (uStartingPrice != null && uEndingPrice != null && uFlowerColorID != null && uFlowerSize == null)
+                {
+                    resultsFlowers.Clear();
+                    foreach (var flower in allFlowers)
+                    {
+                        // Color check
+                        if (flower.COLOR_ID.ToString() == uFlowerColorID)
                         {
                             // Price range check
                             if (flower.FLOWER_PRICE >= Int32.Parse(uStartingPrice) && flower.FLOWER_PRICE <= Int32.Parse(uEndingPrice))
@@ -185,49 +272,39 @@ namespace Assignment1.Controllers
                             }
                         }
                     }
-                }  
-            }
+                }
 
-            // All filled except for ending price
-            if (uStartingPrice != null && uEndingPrice == null && uFlowerColorID != null && uFlowerSize != null)
-            {
-                resultsFlowers.Clear();
-                foreach (var flower in allFlowers)
+                // All filled except for starting price
+                if (uStartingPrice == null && uEndingPrice != null && uFlowerColorID != null && uFlowerSize != null)
                 {
-                    // Color check
-                    if (flower.COLOR_ID.ToString() == uFlowerColorID)
+                    resultsFlowers.Clear();
+                    foreach (var flower in allFlowers)
                     {
-                        // Size check
-                        if (flower.FLOWER_SIZE.ToLower() == uFlowerSize)
+                        // Color check
+                        if (flower.COLOR_ID.ToString() == uFlowerColorID)
                         {
-                            // Price range check
-                            if (flower.FLOWER_PRICE >= Int32.Parse(uStartingPrice))
+                            // Size check
+                            if (flower.FLOWER_SIZE.ToLower() == uFlowerSize)
                             {
-                                resultsFlowers.Add(flower);
+                                // Price range check
+                                if (flower.FLOWER_PRICE <= Int32.Parse(uEndingPrice))
+                                {
+                                    resultsFlowers.Add(flower);
+                                }
                             }
                         }
                     }
                 }
             }
-
-            // All filled except for starting price
-            if (uStartingPrice == null && uEndingPrice != null && uFlowerColorID != null && uFlowerSize != null)
+            else
             {
-                resultsFlowers.Clear();
                 foreach (var flower in allFlowers)
                 {
-                    // Color check
-                    if (flower.COLOR_ID.ToString() == uFlowerColorID)
+                    // If flower color == 1 (Blue)
+                    if (flower.COLOR_ID == 1)
                     {
-                        // Size check
-                        if (flower.FLOWER_SIZE.ToLower() == uFlowerSize)
-                        {
-                            // Price range check
-                            if (flower.FLOWER_PRICE <= Int32.Parse(uEndingPrice))
-                            {
-                                resultsFlowers.Add(flower);
-                            }
-                        }
+                        // Add the flower to the list
+                        resultsFlowers.Add(flower);
                     }
                 }
             }
