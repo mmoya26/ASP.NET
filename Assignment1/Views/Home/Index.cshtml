@@ -46,7 +46,7 @@
                 }
 
                 <div class="card" style="border-bottom: 4px solid @flowerColor">
-                    <img src="~/Content/images/@flowerColor.ToLower()/@flower.FLOWER_NAME/thumb.jpg" class="image-thumbnail" alt="@flower.convertToNormalName(flower.FLOWER_NAME).ToTitleCase()"/>
+                    <img src="~/Content/images/@flowerColor.ToLower()/@flower.FLOWER_NAME/thumb.jpg" class="image-thumbnail @flowerColor.ToLower()" alt="@flower.convertToNormalName(flower.FLOWER_NAME).ToTitleCase()"/>
                     <h4>@flower.convertToNormalName(flower.FLOWER_NAME).ToTitleCase()</h4>
                     <ul>
                         @{

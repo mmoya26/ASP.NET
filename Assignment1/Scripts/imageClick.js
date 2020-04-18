@@ -23,10 +23,11 @@ function addEventListener() {
 function setUpImagePath(e) {
     var flowerElement = e.target;
     var flowerToPathName = flowerElement.alt;
+    var folderColor = this.className.split(' ')[1];
     flowerToPathName = flowerToPathName.toLowerCase();
     flowerToPathName = flowerToPathName.split(" ").join("_");
 
-    imgElement.src = "/asp9/ex4/Content/images/blue/";
+    imgElement.src = "/asp9/ex4/Content/images/" + folderColor + "/";
     imgElement.src += flowerToPathName;
     imgElement.src += "/images/1.jpg"
 
