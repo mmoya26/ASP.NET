@@ -24,10 +24,13 @@ function setUpImagePath(e) {
     var flowerElement = e.target;
     var flowerToPathName = flowerElement.alt;
     var folderColor = this.className.split(' ')[1];
+    var documentURL = document.URL;
+    var folderNumber = documentURL.match(/-?\d(?:[,\d]*\.\d+|[,\d]*)/g)[2];
+
     flowerToPathName = flowerToPathName.toLowerCase();
     flowerToPathName = flowerToPathName.split(" ").join("_");
 
-    imgElement.src = "/asp9/ex7/Content/images/" + folderColor + "/";
+    imgElement.src = "/asp9/ex" + folderNumber + "/Content/images/" + folderColor + "/";
     imgElement.src += flowerToPathName;
     imgElement.src += "/images/1.jpg"
 
