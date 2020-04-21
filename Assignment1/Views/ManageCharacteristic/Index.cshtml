@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Assignment1.Models.CHARACTERISTIC>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="first-column">
+    <h2>Index</h2>
+
+    <p class="red-button">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CHAR_DESC)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CHAR_DESC)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CHAR_ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CHAR_ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CHAR_ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

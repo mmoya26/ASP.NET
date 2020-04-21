@@ -47,11 +47,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -130,6 +130,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageCharacteristicController.cs" />
+    <Compile Include="Controllers\ManageColorController.cs" />
+    <Compile Include="Controllers\ManageFlowerController.cs" />
     <Compile Include="Controllers\SearchFlowerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -398,6 +401,22 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\ManageColor\Create.cshtml" />
+    <Content Include="Views\ManageColor\Delete.cshtml" />
+    <Content Include="Views\ManageColor\Details.cshtml" />
+    <Content Include="Views\ManageColor\Edit.cshtml" />
+    <Content Include="Views\ManageColor\Index.cshtml" />
+    <Content Include="Views\ManageFlower\Create.cshtml" />
+    <Content Include="Views\ManageFlower\Delete.cshtml" />
+    <Content Include="Views\ManageFlower\Details.cshtml" />
+    <Content Include="Views\ManageFlower\Edit.cshtml" />
+    <Content Include="Views\ManageFlower\Index.cshtml" />
+    <Content Include="Views\ManageCharacteristic\Create.cshtml" />
+    <Content Include="Views\ManageCharacteristic\Delete.cshtml" />
+    <Content Include="Views\ManageCharacteristic\Details.cshtml" />
+    <Content Include="Views\ManageCharacteristic\Edit.cshtml" />
+    <Content Include="Views\ManageCharacteristic\Index.cshtml" />
+    <Content Include="Views\Home\Manage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

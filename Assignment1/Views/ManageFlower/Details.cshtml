@@ -1,0 +1,53 @@
+﻿@model Assignment1.Models.FLOWER
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="first-column">
+
+    <h2>Details</h2>
+
+    <div>
+        <h4>FLOWER</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.FLOWER_NAME)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FLOWER_NAME)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FLOWER_SIZE)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FLOWER_SIZE)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FLOWER_PRICE)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FLOWER_PRICE)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.COLOR.COLOR_NAME)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.COLOR.COLOR_NAME)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.FLOWER_ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

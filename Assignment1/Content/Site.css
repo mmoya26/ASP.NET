@@ -214,3 +214,15 @@ input[type=submit] {
     font-size: 3em;
     padding: 30px;
 }
+
+.red-button {
+    background-color: #DA3E52;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    width: 10%;
+}
+
+.red-button a{
+    color: white;
+}

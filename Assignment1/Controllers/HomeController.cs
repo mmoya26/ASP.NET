@@ -340,6 +340,11 @@ namespace Assignment1.Controllers
             return View();
         }
 
+        public ActionResult Manage()
+        {
+            return View();
+        }
+
         public ActionResult Register()
         {
             return View();
