@@ -115,6 +115,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 5px;
 }
 
 footer span {
@@ -145,6 +146,7 @@ hr {
     background-color: #f7f7f7;
     padding: 20px;
     align-self: flex-start;
+    border-radius: 5px;
 }
 
 
