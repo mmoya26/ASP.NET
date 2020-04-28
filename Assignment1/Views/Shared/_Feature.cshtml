@@ -1,0 +1,28 @@
+﻿@model Assignment1.Models.FLOWER
+@using Assignment1.Helpers
+
+@{
+    var flower = Model;
+    var flowerColor = "";
+
+    if (flower.COLOR_ID == 1)
+    {
+        flowerColor = "blue";
+    } else if (flower.COLOR_ID == 2)
+    {
+        flowerColor = "red";
+    } else if (flower.COLOR_ID == 3)
+    {
+        flowerColor = "yellow";
+    }
+
+    var minusValue = (flower.FLOWER_PRICE * .075);
+    var flowerSpecialPrice = flower.FLOWER_PRICE - minusValue;
+}
+
+<div id="featured">
+    <h3>TODAY'S SPECIAL</h3>
+    <h3>@flower.convertToNormalName(flower.FLOWER_NAME).ToTitleCase()</h3>
+    <img src="~/Content/images/@flowerColor/@flower.FLOWER_NAME/thumb.jpg" class="image-thumbnail @flowerColor" alt="@flower.convertToNormalName(flower.FLOWER_NAME).ToTitleCase()"/>
+    <h3>Today's Special Price: $@flowerSpecialPrice</h3>
+</div> 

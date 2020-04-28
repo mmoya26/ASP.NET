@@ -79,7 +79,7 @@ a:hover {
     display: flex;
     justify-content: flex-start;
     margin-top: 30px;
-    height: 400px;
+    height: 600px;
     flex-wrap: wrap;
     overflow-y: scroll;
 }
@@ -113,9 +113,10 @@ footer {
     background-color: #f7f7f7;
     padding: 25px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     border-radius: 5px;
+    text-align: center;
 }
 
 footer span {
@@ -227,4 +228,10 @@ input[type=submit] {
 
 .red-button a{
     color: white;
+}
+
+#featured {
+    border: 3px dotted #ff6b6b;
+    text-align: center;
+    margin-top: 28px;
 }

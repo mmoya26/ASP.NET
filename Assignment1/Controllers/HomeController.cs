@@ -325,6 +325,18 @@ namespace Assignment1.Controllers
             return View(resultsFlowers);
         }
 
+        public ActionResult Feature(int id)
+        {
+            FLOWER flower = db.FLOWERs.Find(id);
+
+            if (flower == null)
+            {
+                return HttpNotFound();
+            }
+
+            return PartialView("~/Views/Shared/_Feature.cshtml", flower);
+        }
+
         public ActionResult About()
         {
             return View();

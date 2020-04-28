@@ -417,6 +417,7 @@
     <Content Include="Views\ManageCharacteristic\Edit.cshtml" />
     <Content Include="Views\ManageCharacteristic\Index.cshtml" />
     <Content Include="Views\Home\Manage.cshtml" />
+    <Content Include="Views\Shared\_Feature.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
